@@ -19,29 +19,34 @@
             android:layout_marginHorizontal="30dp"
             android:layout_height="wrap_content"
             android:text="Write your text here."
+            android:padding="10dp"
+            android:background="@drawable/outline"
             />
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
             android:paddingVertical="10dp">
+
             <Spinner
                 android:id="@+id/languageSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="2"/>
+                android:layout_weight="2"
+                android:background="@drawable/outline"
+                android:popupBackground="@drawable/outline"/>
             <Button
                 android:id="@+id/speakButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Read text"
-                android:layout_marginHorizontal="10dp"
-                />
+                android:layout_marginStart="10dp"
+                style="@style/buttonText"
+                android:layout_marginLeft="10dp" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

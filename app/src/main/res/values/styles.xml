@@ -8,7 +8,7 @@
 
     <style name="buttonText">
         <item name="android:textColor">@color/buttonTextColor</item>
-        <item name="android:background">@drawable/button_enabled</item>
+        <item name="android:background">@drawable/button_selector</item>
     </style>
 
 </resources>

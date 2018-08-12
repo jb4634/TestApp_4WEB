@@ -11,38 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/buttonsLayout"
-            >
-            <TextView
-                android:id="@+id/chooseTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text=""
-                android:textSize="30dp"
-                android:textColor="#ffffff"
-                />
-        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/buttonsLayout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_centerInParent="true"
-            android:layout_marginHorizontal="20dp">
+            android:layout_marginHorizontal="60dp">
             <Button
                 android:id="@+id/speechBtn"
                 style="@style/buttonText"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:text="Text to speech"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:layout_weight="1"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="50dp"
                 />
             <Button
                 android:id="@+id/shapesBtn"
@@ -50,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:text="Shapes"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:layout_weight="1"
                 />
         </LinearLayout>

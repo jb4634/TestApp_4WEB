@@ -12,16 +12,18 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp"
+        android:background="@drawable/outline">
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="30dp"
             android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            >
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/select_the_shape"
                 android:textSize="18sp"
@@ -59,10 +61,12 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_marginEnd="30dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,6 +99,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             >
             <Button
                 android:id="@+id/draw_button"
@@ -107,7 +112,7 @@
                 android:paddingEnd="40dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:layout_marginBottom="20dp"
+
                 />
         </RelativeLayout>
     </LinearLayout>
