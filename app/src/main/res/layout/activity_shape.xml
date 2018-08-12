@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShapeActivity"
+    android:id="@+id/shape_view">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select the shape:"
+                android:textSize="18dp"
+                />
+            <RadioGroup
+                android:id="@+id/group_shape"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp"
+                android:checkedButton="@id/rb_circle"
+                >
+                <RadioButton
+                    android:id="@+id/rb_circle"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="circle" />
+                <RadioButton
+                    android:id="@+id/rb_triangle"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="triangle" />
+                <RadioButton
+                    android:id="@+id/rb_square"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="square" />
+            </RadioGroup>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="30dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select the size of the shape:"
+                    android:textSize="18dp"/>
+                <TextView
+                    android:id="@+id/size_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="70 %"
+                    android:gravity="center_horizontal"/>
+
+            </LinearLayout>
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="10dp"
+                android:max="100"
+                android:progress="70"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+>
+            <Button
+                android:id="@+id/draw_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Draw shape"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="20dp"
+                android:layout_marginBottom="20dp"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
