@@ -126,7 +126,7 @@ public class DrawActivity extends AppCompatActivity {
             super(context);
             paint = new Paint();
             paint.setStyle(Paint.Style.STROKE);
-            paint.setColor(Color.BLUE);
+            paint.setColor(Color.parseColor("#01A19B"));
         }
 
         @Override
