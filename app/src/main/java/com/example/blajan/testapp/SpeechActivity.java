@@ -1,13 +1,11 @@
 package com.example.blajan.testapp;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,11 +26,11 @@ public class SpeechActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speech);
 
-        speakText = (EditText) findViewById(R.id.speakText);
-        speakButton = (Button) findViewById(R.id.speakButton);
+        speakText = (EditText) findViewById(R.id.speech_edit_text);
+        speakButton = (Button) findViewById(R.id.speech_button);
 
         //Spinner for dropdown menu:
-        spinner = (Spinner) findViewById(R.id.languageSpinner);
+        spinner = (Spinner) findViewById(R.id.speech_language_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.language_array, android.R.layout.simple_spinner_item);
@@ -83,7 +81,7 @@ public class SpeechActivity extends AppCompatActivity{
             }
         });
 
-        findViewById(R.id.speakText).setOnTouchListener(new OnSwipeListener(this) {
+        findViewById(R.id.speech_edit_text).setOnTouchListener(new OnSwipeListener(this) {
             @Override
             public void onSwipeLeft() {
                 Intent intent = new Intent(SpeechActivity.this, MainActivity.class);

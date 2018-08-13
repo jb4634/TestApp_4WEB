@@ -3,7 +3,6 @@ package com.example.blajan.testapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,6 +15,8 @@ import android.util.Log;
 import android.view.View;
 
 public class DrawActivity extends AppCompatActivity {
+    private static final String LINE_COLOR = "#01A19B";
+
     String shape;
     double ratio;
     int xCenter;
@@ -126,7 +127,7 @@ public class DrawActivity extends AppCompatActivity {
             super(context);
             paint = new Paint();
             paint.setStyle(Paint.Style.STROKE);
-            paint.setColor(Color.parseColor("#01A19B"));
+            paint.setColor(Color.parseColor(LINE_COLOR));
         }
 
         @Override

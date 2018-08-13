@@ -1,12 +1,9 @@
 package com.example.blajan.testapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,8 +17,8 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ttsButton = (Button) findViewById(R.id.speechBtn);
-        shapeButton = findViewById(R.id.shapesBtn);
+        ttsButton = (Button) findViewById(R.id.main_button_speech);
+        shapeButton = findViewById(R.id.main_button_shapes);
 
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override

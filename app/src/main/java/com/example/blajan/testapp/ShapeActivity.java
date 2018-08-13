@@ -10,7 +10,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShapeActivity extends AppCompatActivity {
     SeekBar seekBar;
@@ -24,9 +23,9 @@ public class ShapeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shape);
 
         seekBar = (SeekBar) findViewById(R.id.seekbar);
-        drawButton = (Button) findViewById(R.id.draw_button);
-        sizeText = findViewById(R.id.size_text);
-        shapeGroup = findViewById(R.id.group_shape);
+        drawButton = (Button) findViewById(R.id.shape_draw_button);
+        sizeText = findViewById(R.id.shape_text_size_progress);
+        shapeGroup = findViewById(R.id.shape_radio_group);
 
         drawButton.setOnClickListener(new View.OnClickListener() {
             @Override

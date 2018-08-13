@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShapeActivity"
     android:id="@+id/shape_view">
-
-
     <LinearLayout
+        android:id="@+id/shape_linear_outer"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:background="@drawable/outline">
         <RelativeLayout
+            android:id="@+id/shape_relative_select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -23,19 +22,20 @@
             android:layout_marginLeft="30dp"
             >
             <TextView
+                android:id="@+id/shape_text_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select_the_shape"
+                android:text="@string/shape_text_select"
                 android:textSize="18sp"
                 />
             <RadioGroup
-                android:id="@+id/group_shape"
+                android:id="@+id/shape_radio_group"
+                android:checkedButton="@id/rb_circle"
                 android:layout_centerVertical="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="15dp"
-                android:checkedButton="@id/rb_circle"
                 android:layout_marginLeft="15dp">
                 <RadioButton
                     android:id="@+id/rb_circle"
@@ -58,9 +58,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/square"/>
             </RadioGroup>
-
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/shape_relative_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,21 +69,22 @@
             android:layout_marginRight="30dp"
             android:layout_marginEnd="30dp">
             <LinearLayout
+                android:id="@+id/shape_linear_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
                 <TextView
+                    android:id="@+id/shape_text_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/select_the_size_of_the_shape"
+                    android:text="@string/shape_text_size"
                     android:textSize="18sp"/>
                 <TextView
-                    android:id="@+id/size_text"
+                    android:id="@+id/shape_text_size_progress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_progress"
+                    android:text="@string/shape_default_progress"
                     android:gravity="center_horizontal"/>
-
             </LinearLayout>
             <SeekBar
                 android:id="@+id/seekbar"
@@ -97,22 +98,22 @@
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/shape_relative_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             >
             <Button
-                android:id="@+id/draw_button"
-                style="@style/buttonText"
+                android:id="@+id/shape_draw_button"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="@string/draw_button"
+                android:text="@string/shape_draw_button"
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-
                 />
         </RelativeLayout>
     </LinearLayout>

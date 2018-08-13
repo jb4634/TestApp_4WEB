@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="activityBackground">#102121</color>
-    <!--<color name="buttonBackground">#5a595b</color>-->
-    <color name="buttonBackground">#36BEB2</color>
-    <color name="buttonStroke">#ffffff</color>
-    <color name="buttonTextColor">#ffffff</color>
+    <color name="activity_background">#303030</color>
+    <color name="button_background">#36BEB2</color>
+    <color name="button_text">#ffffff</color>
+    <color name="button_pressed_stroke">#70B1AB</color>
+    <color name="button_pressed_background">#80CBC4</color>
 </resources>

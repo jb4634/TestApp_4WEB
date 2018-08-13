@@ -11,7 +11,7 @@
 
     <stroke
         android:width="2dp"
-        android:color="@color/buttonBackground"/>
+        android:color="@color/button_background"/>
     <solid
-        android:color="#303030"/>
+        android:color="@color/activity_background"/>
 </shape>

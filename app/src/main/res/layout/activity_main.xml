@@ -1,45 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_layout"
     tools:context=".MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
+        android:layout_height="match_parent">
         <LinearLayout
-            android:id="@+id/buttonsLayout"
+            android:id="@+id/main_buttons_layout"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
-            android:layout_marginHorizontal="60dp">
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginStart="60dp"
+            tools:ignore="UselessParent">
             <Button
-                android:id="@+id/speechBtn"
-                style="@style/buttonText"
+                android:id="@+id/main_button_speech"
+                style="@style/button"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:text="Text to speech"
-                android:textSize="18dp"
+                android:text="@string/main_button_speech"
+                android:textSize="18sp"
                 android:layout_weight="1"
                 android:layout_marginRight="50dp"
-                />
+                android:layout_marginEnd="50dp" />
             <Button
-                android:id="@+id/shapesBtn"
-                style="@style/buttonText"
+                android:id="@+id/main_button_shapes"
+                style="@style/button"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:text="Shapes"
-                android:textSize="18dp"
+                android:text="@string/main_button_shapes"
+                android:textSize="18sp"
                 android:layout_weight="1"
                 />
         </LinearLayout>
-
-
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
