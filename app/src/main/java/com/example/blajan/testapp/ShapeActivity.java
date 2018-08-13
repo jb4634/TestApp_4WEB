@@ -1,9 +1,8 @@
 package com.example.blajan.testapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -22,8 +21,8 @@ public class ShapeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shape);
 
-        seekBar = (SeekBar) findViewById(R.id.seekbar);
-        drawButton = (Button) findViewById(R.id.shape_draw_button);
+        seekBar = findViewById(R.id.seekbar);
+        drawButton = findViewById(R.id.shape_draw_button);
         sizeText = findViewById(R.id.shape_text_size_progress);
         shapeGroup = findViewById(R.id.shape_radio_group);
 
@@ -32,7 +31,7 @@ public class ShapeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RadioButton selectedRb = findViewById(shapeGroup.getCheckedRadioButtonId());
                 Intent intent = new Intent(ShapeActivity.this, DrawActivity.class);
-                intent.putExtra("shape",selectedRb.getText());
+                intent.putExtra("shape", selectedRb.getText());
                 intent.putExtra("size", seekBar.getProgress());
                 startActivity(intent);
                 finish();
@@ -47,15 +46,14 @@ public class ShapeActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 
+        // Listener for detecting back and exit gestures
         findViewById(R.id.shape_view).setOnTouchListener(new OnSwipeListener(this) {
             @Override
             public void onSwipeLeft() {
@@ -63,10 +61,11 @@ public class ShapeActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+
             @Override
-            public void onSwipeDown(){
+            public void onSwipeDown() {
                 Intent intent = new Intent(ShapeActivity.this, MainActivity.class);
-                intent.putExtra("EXIT",true);
+                intent.putExtra("EXIT", true);
                 startActivity(intent);
                 finish();
             }
@@ -75,12 +74,7 @@ public class ShapeActivity extends AppCompatActivity {
 
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-
-        Log.d("Focus debug", "Focus changed !");
-
-        if(!hasFocus) {
-            Log.d("Focus debug", "Lost focus !");
-
+        if (!hasFocus) {
             Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
             sendBroadcast(closeDialog);
         }

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_layout"
     tools:context=".MainActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/main_buttons_layout"
             android:layout_width="match_parent"
@@ -17,25 +19,26 @@
             android:layout_marginRight="60dp"
             android:layout_marginStart="60dp"
             tools:ignore="UselessParent">
+
             <Button
                 android:id="@+id/main_button_speech"
                 style="@style/button"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:text="@string/main_button_speech"
-                android:textSize="18sp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginEnd="50dp" />
+                android:layout_weight="1"
+                android:text="@string/main_button_speech"
+                android:textSize="18sp" />
+
             <Button
                 android:id="@+id/main_button_shapes"
                 style="@style/button"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:text="@string/main_button_shapes"
-                android:textSize="18sp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                />
+                android:text="@string/main_button_shapes"
+                android:textSize="18sp" />
         </LinearLayout>
     </RelativeLayout>
 

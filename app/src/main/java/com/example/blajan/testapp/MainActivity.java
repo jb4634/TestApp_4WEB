@@ -1,24 +1,20 @@
 package com.example.blajan.testapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity{
-
-    Button ttsButton;
-    Button shapeButton;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ttsButton = (Button) findViewById(R.id.main_button_speech);
-        shapeButton = findViewById(R.id.main_button_shapes);
+        Button ttsButton = findViewById(R.id.main_button_speech);
+        Button shapeButton = findViewById(R.id.main_button_shapes);
 
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,51 +29,50 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        //Sets listener to watch for back gesture (left) or exit gesture (down)
         findViewById(R.id.main_layout).setOnTouchListener(new OnSwipeListener(this) {
             @Override
             public void onSwipeLeft() {
                 finish();
             }
+
             @Override
-            public void onSwipeDown(){
+            public void onSwipeDown() {
                 System.exit(0);
             }
         });
 
-        if (getIntent().getBooleanExtra("EXIT", false))
-        {
+        //Exit application if some other activity ordered it.
+        if (getIntent().getBooleanExtra("EXIT", false)) {
             System.exit(0);
         }
 
     }
 
     public void openTTS(View view) {
-        Intent intent = new Intent(this,SpeechActivity.class);
+        Intent intent = new Intent(this, SpeechActivity.class);
         startActivity(intent);
         finish();
     }
-    public void openShape(View view){
+
+    public void openShape(View view) {
         Intent intent = new Intent(this, ShapeActivity.class);
         startActivity(intent);
         finish();
     }
 
+    // Closes system dialog (status bar) if app loses focus (status bar is opened)
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-
-        Log.d("Focus debug", "Focus changed !");
-
-        if(!hasFocus) {
-            Log.d("Focus debug", "Lost focus !");
-
+        if (!hasFocus) {
             Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
             sendBroadcast(closeDialog);
         }
     }
 
+    //Do nothing if "back" button is pressed
     @Override
     public void onBackPressed() {
-        //Do nothing
     }
 
 }

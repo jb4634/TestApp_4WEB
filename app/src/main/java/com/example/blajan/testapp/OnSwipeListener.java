@@ -1,50 +1,51 @@
 package com.example.blajan.testapp;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-// Detects left swipes
+/**
+ * OnTouchListener that detects:
+ * - left swipe with two fingers
+ * - down swipe with three fingers
+ * - dragging with one finger
+ */
 public class OnSwipeListener implements View.OnTouchListener {
 
     private final GestureDetector gestureDetector;
-    private int numberOfPointers;
     private int maxFingers;
 
 
-    public OnSwipeListener(Context context) {
+    OnSwipeListener(Context context) {
         gestureDetector = new GestureDetector(context, new GestureListener());
     }
 
     public void onSwipeLeft() {
     }
+
     public void onSwipeDown() {
     }
-    public void onMove(float x, float y){
+
+    public void onMove(float x, float y) {
     }
 
     public boolean onTouch(View v, MotionEvent event) {
         int action = event.getActionMasked();
-        switch(action){
-            case MotionEvent.ACTION_DOWN:
-                maxFingers=1;
-                onMove(event.getX(),event.getY());
+        switch (action) {
+            case MotionEvent.ACTION_DOWN: //initial touch of current gesture
+                maxFingers = 1;
+                onMove(event.getX(), event.getY());
                 break;
-            case MotionEvent.ACTION_POINTER_DOWN:
+            case MotionEvent.ACTION_POINTER_DOWN: //additional fingers touch the screen
                 maxFingers++;
                 break;
-            case MotionEvent.ACTION_UP:
-                //maxFingers=0;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                if(maxFingers==1)
-                    onMove(event.getX(),event.getY());
+            case MotionEvent.ACTION_MOVE:   //when moving fingers over the screen
+                if (maxFingers == 1)
+                    onMove(event.getX(), event.getY());
                 break;
 
         }
-        Log.d("onTouch", "maxF:"+maxFingers);
         return gestureDetector.onTouchEvent(event);
     }
 
@@ -62,25 +63,23 @@ public class OnSwipeListener implements View.OnTouchListener {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             float distanceX = e2.getX() - e1.getX();
             float distanceY = e2.getY() - e1.getY();
+
+            // Detects left swipe with two fingers
             if (Math.abs(distanceX) > Math.abs(distanceY)
                     && Math.abs(distanceX) > SWIPE_DISTANCE_THRESHOLD
                     && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD
-                    && maxFingers==2) {
-                if (distanceX < 0) {
-                    Log.d("swipe:"+numberOfPointers, "back");
+                    && maxFingers == 2 && distanceX < 0) {
+                onSwipeLeft();
+                return true;
 
-                    onSwipeLeft();
-                    return true;
-                }
             }
-            else if(Math.abs(distanceX) < Math.abs(distanceY)
+
+            // Detects down swipe with three fingers
+            else if (Math.abs(distanceX) < Math.abs(distanceY)
                     && Math.abs(distanceY) > SWIPE_DISTANCE_THRESHOLD
                     && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD
-                    && maxFingers==3){
-                if (distanceY > 0){
-                    Log.d("swipe:","close");
-                    onSwipeDown();
-                }
+                    && maxFingers == 3 && distanceY > 0) {
+                onSwipeDown();
             }
             return false;
         }

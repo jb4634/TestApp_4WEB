@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/speech_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpeechActivity"
-    android:id="@+id/speech_view">
+    tools:context=".SpeechActivity">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <EditText
             android:id="@+id/speech_edit_text"
-            android:layout_weight="20"
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_height="0dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_height="0dp"
-            android:padding="10dp"
-            android:background="@drawable/outline"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="20"
+            android:background="@drawable/outline"
+            android:hint="@string/speech_edit_text"
             android:inputType="text"
-            android:hint="@string/speech_edit_text"/>
+            android:padding="10dp" />
+
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginStart="30dp"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
             <Spinner
                 android:id="@+id/speech_language_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:background="@drawable/outline"
-                android:popupBackground="@drawable/outline"/>
+                android:popupBackground="@drawable/outline" />
+
             <Button
                 android:id="@+id/speech_button"
+                style="@style/button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/speech_button"
-                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                style="@style/button"/>
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/speech_button" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
