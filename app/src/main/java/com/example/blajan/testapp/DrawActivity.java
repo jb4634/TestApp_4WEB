@@ -149,6 +149,7 @@ public class DrawActivity extends AppCompatActivity {
             paint = new Paint();
             paint.setStyle(Paint.Style.STROKE);
             paint.setColor(Color.parseColor(LINE_COLOR));
+            paint.setStrokeWidth(10);
         }
 
         @Override

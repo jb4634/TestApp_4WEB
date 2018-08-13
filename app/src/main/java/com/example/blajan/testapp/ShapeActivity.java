@@ -41,7 +41,7 @@ public class ShapeActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                sizeText.setText(Integer.toString(progress));
+                sizeText.setText(Integer.toString(progress)+" %");
             }
 
             @Override

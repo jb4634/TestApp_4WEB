@@ -41,7 +41,7 @@ public class OnSwipeListener implements View.OnTouchListener {
                 maxFingers++;
                 break;
             case MotionEvent.ACTION_MOVE:   //when moving fingers over the screen
-                if (maxFingers == 1)
+                if (event.getPointerCount()==1)
                     onMove(event.getX(), event.getY());
                 break;
 
