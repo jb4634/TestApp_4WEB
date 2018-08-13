@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 /**
  * Class which creates window over notification bar which intercepts pull down gesture
+ *  - copied from internet: https://stackoverflow.com/a/38356876
  */
 public class PreventStatusBar {
 
