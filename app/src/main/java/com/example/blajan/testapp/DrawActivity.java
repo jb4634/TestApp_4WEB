@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 
 public class DrawActivity extends AppCompatActivity {
     private static final String LINE_COLOR = "#01A19B"; // Color of the shape's outline
@@ -29,13 +30,14 @@ public class DrawActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Gets the selected shape and size from extras in intent
         Intent intent = getIntent();
         shape = intent.getStringExtra("shape");
         ratio = intent.getIntExtra("size", 70) / 100.0;
         View view = new DrawView(this);
         setContentView(view);
+
+        PreventStatusBar.preventStatusBarExpansion(this);
 
         // Get instance of Vibrator from current Context
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -187,14 +189,15 @@ public class DrawActivity extends AppCompatActivity {
 
     }
 
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (!hasFocus) {
-            Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            sendBroadcast(closeDialog);
+    /*
+        public void onWindowFocusChanged(boolean hasFocus) {
+            super.onWindowFocusChanged(hasFocus);
+            if (!hasFocus) {
+                Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+                sendBroadcast(closeDialog);
+            }
         }
-    }
-
+    */
     @Override
     public void onBackPressed() {
         //do nothing

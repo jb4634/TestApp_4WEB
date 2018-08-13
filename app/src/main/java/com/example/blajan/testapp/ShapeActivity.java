@@ -10,6 +10,8 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import static com.example.blajan.testapp.PreventStatusBar.preventStatusBarExpansion;
+
 public class ShapeActivity extends AppCompatActivity {
     SeekBar seekBar;
     Button drawButton;
@@ -19,6 +21,7 @@ public class ShapeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().addFlags(WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY);
         setContentView(R.layout.activity_shape);
 
         seekBar = findViewById(R.id.seekbar);
@@ -41,7 +44,7 @@ public class ShapeActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                sizeText.setText(Integer.toString(progress)+" %");
+                sizeText.setText(Integer.toString(progress) + " %");
             }
 
             @Override
@@ -70,8 +73,12 @@ public class ShapeActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        preventStatusBarExpansion(this);
     }
 
+
+    /*
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (!hasFocus) {
@@ -79,7 +86,7 @@ public class ShapeActivity extends AppCompatActivity {
             sendBroadcast(closeDialog);
         }
     }
-
+*/
     @Override
     public void onBackPressed() {
         //do nothing

@@ -24,6 +24,7 @@ public class SpeechActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speech);
+        PreventStatusBar.preventStatusBarExpansion(this);
 
         speakText = findViewById(R.id.speech_edit_text);
         speakButton = findViewById(R.id.speech_button);
@@ -105,14 +106,6 @@ public class SpeechActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
-
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (!hasFocus) {
-            Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            sendBroadcast(closeDialog);
-        }
     }
 
     @Override

@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PreventStatusBar.preventStatusBarExpansion(this);
 
         Button ttsButton = findViewById(R.id.main_button_speech);
         Button shapeButton = findViewById(R.id.main_button_shapes);
@@ -59,15 +60,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShapeActivity.class);
         startActivity(intent);
         finish();
-    }
-
-    // Closes system dialog (status bar) if app loses focus (status bar is opened)
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (!hasFocus) {
-            Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            sendBroadcast(closeDialog);
-        }
     }
 
     //Do nothing if "back" button is pressed
